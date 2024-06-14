@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+</head>
+<body>
+    <style>
+        #b1{
+          margin-left:100px;
+        color: white;
+        padding: 20px;
+        font-family: sans-serif;
+    }
+    
+    #b2{
+        color: white;
+        padding: 20px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+    #b3{
+        color: white;
+        font-weight: bold;
+        padding: 20px;
+        font-family: sans-serif;
+    }
+    #b4{
+        color: white;
+        font-weight: bold;
+        padding: 20px;
+        font-family: sans-serif;
+    }
+    #b2:hover{
+        color: rgb(102, 101, 101);
+        
+    }
+    #b3:hover{
+       color: rgb(102, 101, 101);
+        
+    }
+    #b4:hover{
+       color: rgb(102, 101, 101);
+        
+    }
+
+    #contact{
+      background-color: black;
+      height: 100vh;
+    }
+    #left-hero{
+      margin-top: 100px;
+      width: 60%;
+      margin-left: 50px;
+    }
+    #hero-img{
+      margin-top: 100px;
+     
+    }
+ 
+    h1{
+      color: white;
+    }
+    #main1{
+      display: flex;
+      color: white;
+      font-family: sans-serif;
+      width: 100%;
+    }
+    #main1 div{
+      width: 40%;
+    }
+    .form-group input{
+      width: 300px;
+    
+    }
+    .form-group{
+      margin-top: 20px;
+    }
+    #message{
+      width: 400px;
+    }
+    #but{
+      margin-top: 20px;
+      color: white;
+      background-color: blueviolet;
+      border-radius: 6px;
+      height: 40px;
+      width: 200px;
+      font-family: sans-serif;
+    }
+    #but:hover{
+      color: blueviolet;
+      background-color: white;
+      transition: .6s;
+      border: solid blueviolet 3px;
+    }
+
+    </style>
+
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand col" id="b1" href="{%url 'home'%}">SEBI BANKS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link  col" id="b2" aria-current="page" href="{%url 'home'%}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link col" id="b3" href="{%url 'about'%}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link col" id="b4" href="{%url 'transactions'%}">Transactions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link col" id="b4" href="{%url 'customers'%}">Customers</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link col" id="b4" href="{%url 'contacts'%}">Contact Us</a>
+            </li>
+        </ul>
+     
+      </div>
+    </div>
+  </nav>
+    <div class="contact-area" id="contact">
+        <div class="animated fadeIn row" id="main1">
+            <div class="col-md-6" id="left-hero">
+            <h1 class="hero-tag contact-hero animated fadeInLeft">Let's Get In Touch.</h1>
+            <p class="hero-des contact-des animated fadeIn delay-1s">Want to discuss a project, an idea, an
+            opportunity?<br>Just fill up this
+            form or write me an email <a target="_blank" href="mailto:ishandeveloper@outlook.com"><i class="fas fa-envelope"></i></a>
+            </p>
+            <form class="input-container" method="POST" action="">
+            <div class="form-group"><label for="name">Name</label><input type="text" name="name" id="name" class="form-control" required=""></div>
+            <div class="form-group"><label for="email">Email Address</label><input type="email" name="email" id="email" class="form-control" required=""></div>
+            <div class="form-group"><label for="message">Your Message</label><textarea rows="3" id="message" name="message" class="form-control" required=""></textarea></div>
+            <button type="submit" class="submit animated bounce delay-4s learn-btn" id="but">
+            Send Message
+            </button>
+            <div style="display:none;" id="thankyou_message">
+            <h2>
+            <em>Thanks</em> for contacting us!
+            We will get back to you soon!
+            </h2>
+            </div>
+            </form>
+            <br>
+            
+             </div>
+            <div class="col-md-6" id="hero-right">
+            <img class="animated fadeInRight"id="hero-img" width="700px" src="{% static 'images/contact.svg' %}">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
